@@ -5,7 +5,9 @@ import {
   MdOutlineKeyboardDoubleArrowDown,
 } from "react-icons/md";
 
-const Card = () => {
+const Card = (props) => {
+  const { onclick } = props;
+
   return (
     <div className="flex flex-col bg-gradient-to-br to-sky-400 from-sky-500 w-60 min-w-60 m-1 p-1 rounded-xl flex-shrink-0 text-white">
       <div className="flex flex-col items-center text-6xl font-semibold">
@@ -31,7 +33,7 @@ const Card = () => {
         <span>Humidity: 54%</span>
         <div className="flex flex-col">
           <span className="underline">Visibility: 80%</span>
-          <div className="flex items-center">
+          <div className="flex items-center my-1">
             <AiFillEyeInvisible />
             <div className="mx-0.5 h-2 rounded-lg overflow-hidden bg-white flex-1">
               <div className="w-[80%] rounded-lg bg-sky-200 h-full"></div>
@@ -39,7 +41,10 @@ const Card = () => {
             <AiFillEye />
           </div>
         </div>
-        <button className="flex items-center justify-center my-2 bg-transparent border border-white group">
+        <button
+          className="flex items-center justify-center my-2 p-1 bg-transparent border border-white group"
+          onClick={onclick}
+        >
           <MdOutlineKeyboardDoubleArrowDown className="group-hover:animate-bounce" />
           <span>View Full Report</span>
         </button>

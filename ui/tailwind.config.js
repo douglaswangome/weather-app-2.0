@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         "comic-neue": "'Comic Neue'",
+        pacifico: "'pacifico'",
       },
     },
   },

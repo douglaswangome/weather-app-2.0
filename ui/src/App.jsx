@@ -1,18 +1,9 @@
-import Card from "./components/Card";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
     <div>
-      <div className="flex overflow-x-auto w-full">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
+      <Home />
     </div>
   );
 };
