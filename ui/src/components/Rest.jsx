@@ -6,7 +6,7 @@ const Rest = (props) => {
 
   return (
     <div
-      className={`absolute flex flex-col top-0 w-full min-h-screen bg-white p-2 ${
+      className={`absolute flex flex-col top-0 h-screen w-full bg-white py-2 px-1 ${
         fullScreenMode
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"
@@ -19,9 +19,9 @@ const Rest = (props) => {
         <MdKeyboardDoubleArrowUp />
       </button>
       <div className="flex flex-col">
-        <div className="flex justify-between h-[95vh] w-full mt-2 font-pacifico max-[820px]:flex-col max-[820px]:min-h-screen">
+        <div className="flex justify-between h-[95vh] w-full font-pacifico max-[820px]:flex-col">
           <div
-            className="flex flex-col h-full text-white w-[49%] p-2 rounded-2xl hover:scale-[.99] transition-all duration-500 max-[820px]:min-h-screen max-[820px]:mt-4 max-[820px]:w-[80%] max-[820px]:mx-auto max-[640px]:w-[88%] max-[450px]:w-[98%]"
+            className="flex flex-col h-full text-white w-[47%] p-2 rounded-2xl hover:scale-[.99] transition-all duration-500 max-[820px]:min-h-screen max-[820px]:mt-4 max-[820px]:w-[80%] max-[820px]:mx-auto max-[640px]:w-[88%] max-[450px]:w-[98%]"
             style={{ background: "url('/images/sunrise.jpg')" }}
           >
             <div className="w-fit mx-auto text-xl my-1">
@@ -99,8 +99,8 @@ const Rest = (props) => {
               <span className="font-comic-neue">{data.main.pressure} hPa</span>
             </div>
           </div>
-          <div
-            className="flex flex-col h-full text-white w-[49%] p-2 rounded-2xl hover:scale-[.99] transition-all duration-500 max-[820px]:min-h-screen max-[820px]:mt-4 max-[820px]:w-[80%] max-[820px]:mx-auto max-[640px]:w-[88%] max-[450px]:w-[98%]"
+          {/* <div
+            className="flex flex-col h-full text-white w-[47%] p-2 rounded-2xl hover:scale-[.99] transition-all duration-500 max-[820px]:min-h-screen max-[820px]:mt-4 max-[820px]:w-[80%] max-[820px]:mx-auto max-[640px]:w-[88%] max-[450px]:w-[98%]"
             style={{ background: "url('/images/sunset.jpg')" }}
           >
             <span className="text-4xl font-pacifico w-fit mx-auto my-2">
@@ -145,7 +145,7 @@ const Rest = (props) => {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
