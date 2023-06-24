@@ -11,7 +11,7 @@ const Card = (props) => {
   return (
     <div className="flex flex-col bg-gradient-to-br to-sky-400 from-sky-500 w-60 min-w-60 m-1 p-1 rounded-xl flex-shrink-0 text-white">
       <div className="flex flex-col items-center text-5xl font-semibold">
-        <div className="flex items-center text-xl">
+        <div className="flex items-center text-xl cursor-pointer">
           <MdOutlineLocationOn />
           <span>{city.name}</span>
         </div>

@@ -2,17 +2,20 @@ import { useEffect, useState } from "react";
 // components
 import Card from "../components/Card";
 import Rest from "../components/Rest";
-import getLocation from "../utils/getLocation";
 // icons
 import { BsCloudSlashFill, BsCloudSunFill } from "react-icons/bs";
+// cities
+import cities from "../utils/cities.json";
 
 const Home = () => {
   // loading flag
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   // variables
+  const [advice, setAdvice] = useState("Fuck");
   const [lat, setLat] = useState(-1.2921);
   const [lon, setLon] = useState(36.8219);
+  const [showCities, setShowCities] = useState(false);
   const [fullScreenMode, setFullScreenMode] = useState(false);
 
   // results
@@ -25,12 +28,10 @@ const Home = () => {
   };
 
   useEffect(() => {
-    // Get Location
-    console.log(getLocation());
     // Fetch Data
-    const fetchData = async () => {
+    const fetchData = async (lat, lon) => {
       const response = await fetch(
-        "https://api.openweathermap.org/data/2.5/forecast?lat=-1.2921&lon=36.8219&appid=1220d3bd956050720587fe7607594091&units=metric"
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1220d3bd956050720587fe7607594091&units=metric`
       );
       if (response.status === 200) {
         const data = await response.json();
@@ -42,12 +43,15 @@ const Home = () => {
       }
     };
 
-    fetchData();
+    // Function calls
+    fetchData(lat, lon);
   }, []);
 
   return (
     <div className="h-screen overflow-hidden">
-      <div className="bg-red-400">DougWeather</div>
+      <div className="relative flex justify-center py-3 text-4xl bg-white shadow-md font-pacifico ">
+        <span className="text-sky-500">DougWeather</span>
+      </div>
       {loading ? (
         <div className="relative flex items-center justify-center w-full h-full text-sky-500">
           <div className="flex flex-col text-6xl">
@@ -74,19 +78,27 @@ const Home = () => {
         </div>
       ) : (
         <>
-          <div className="flex flex-col h-full overflow-x-scroll">
+          <div className="flex flex-col h-full">
             <div className="flex flex-col py-0">
-              <div className="py-3 text-4xl w-full">
-                <span className="font-pacifico font-extralight">
-                  Carry an Umbrella
-                </span>
+              <div className="relative flex flex-col w-full p-2 text-xl">
+                <div className="flex">
+                  <span className="text-xl">Current City:</span>
+                  <span
+                    className="ml-1 underline"
+                    onClick={() => setShowCities(true)}
+                  >
+                    {city.name}
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-col overflow-x-scroll pb-4">
+              <div className="w-full py-3 text-4xl">
+                <span className="font-pacifico font-extralight">{advice}</span>
+              </div>
+              <div className="flex flex-col pb-4 overflow-x-scroll">
                 <div className="flex w-full">
                   {list.map((single, index) => (
-                    <div onClick={() => setIndex(index)}>
+                    <div key={index} onClick={() => setIndex(index)}>
                       <Card
-                        key={index}
                         single={single}
                         city={city}
                         onclick={toggleFullScreen}
@@ -98,6 +110,7 @@ const Home = () => {
             </div>
           </div>
           <Rest
+            advice={advice}
             city={city}
             data={list[index]}
             onclick={toggleFullScreen}
