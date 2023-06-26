@@ -30,7 +30,9 @@ const Home = () => {
     // Fetch Data and Assign Location
     const fetchData = async (lat, lon) => {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1220d3bd956050720587fe7607594091&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${
+          import.meta.env.VITE_API_KEY
+        }&units=metric`
       );
       if (response.status === 200) {
         const data = await response.json();
