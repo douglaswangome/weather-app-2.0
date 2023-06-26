@@ -21,7 +21,7 @@ const Rest = (props) => {
       className={`absolute flex flex-col top-0 h-screen w-full overflow-y-hidden bg-gray-100 ${
         fullScreenMode
           ? "opacity-100 pointer-events-auto"
-          : "opacity-0 pointer-events-none delay-300"
+          : "opacity-0 pointer-events-none delay-500"
       } transition-all duration-500 text-xl`}
     >
       <div className="absolute top-[1%] left-[50%] rounded-t-2xl translate-x-[-50%] w-full max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[98%] bg-transparent z-[11]">
@@ -58,10 +58,10 @@ const Rest = (props) => {
             } max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[98%]`}
             style={{ background: "url('/images/sunrise.jpg')" }}
           >
-            <div className="w-fit mx-auto text-xl my-1">
+            <div className="mx-auto my-1 text-xl w-fit">
               <span>{new Date(city.sunrise * 1000).toDateString()}</span>
             </div>
-            <div className="flex flex-col w-fit my-2">
+            <div className="flex flex-col my-2 w-fit">
               <span className="text-5xl max-[450px]:text-3xl">Sunrise</span>
               <span className="text-xl font-comic-neue">
                 {new Date(city.sunrise * 1000).toLocaleTimeString()}
@@ -81,7 +81,7 @@ const Rest = (props) => {
                   <span className="text-4xl max-[450px]:text-3xl">
                     {data.weather[0].main}
                   </span>
-                  <span className="text-base font-comic-neue capitalize">
+                  <span className="text-base capitalize font-comic-neue">
                     {data.weather[0].description}
                   </span>
                 </div>
@@ -97,7 +97,7 @@ const Rest = (props) => {
             </div>
             <div className="flex flex-col w-full my-2">
               <span className="text-5xl max-[450px]:text-3xl">Temp:</span>
-              <div className="flex justify-between font-comic-neue mt-4">
+              <div className="flex justify-between mt-4 font-comic-neue">
                 <div className="flex flex-col w-fit">
                   <span className="text-3xl max-[450px]:text-2xl ml-auto">
                     {data.main.feels_like}&deg;
@@ -137,19 +137,19 @@ const Rest = (props) => {
             } max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[98%]`}
             style={{ background: "url('/images/sunset.jpg')" }}
           >
-            <div className="flex flex-col w-fit mx-auto my-2">
+            <div className="flex flex-col mx-auto my-2 w-fit">
               <span className="text-5xl max-[450px]:text-3xl ml-auto">
                 {city.name}, {city.country}
               </span>
-              <div className="flex font-comic-neue">
+              <div className="flex mx-auto font-comic-neue w-fit">
                 <span className="mr-1">Lat: {city.coord.lat},</span>
                 <span>Lon: {city.coord.lon}</span>
               </div>
             </div>
-            <div className="w-full mb-0 mt-auto backdrop-blur-sm">
+            <div className="w-full mt-auto mb-0 backdrop-blur-sm">
               <div className="flex flex-col w-full my-2">
                 <span className="text-5xl max-[450px]:text-3xl">Wind:</span>
-                <div className="flex justify-between font-comic-neue mt-4">
+                <div className="flex justify-between mt-4 font-comic-neue">
                   <div className="flex flex-col w-fit">
                     <span className="text-5xl max-[450px]:text-3xl ml-auto">
                       {data.wind.speed}
@@ -174,7 +174,7 @@ const Rest = (props) => {
                 <span className="text-5xl max-[450px]:text-3xl">
                   Visibility:
                 </span>
-                <span className="text-xl font-comic-neue mt-3">
+                <span className="mt-3 text-xl font-comic-neue">
                   {data.visibility}/10000 (in km)
                 </span>
               </div>

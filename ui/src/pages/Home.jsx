@@ -4,8 +4,8 @@ import Card from "../components/Card";
 import Rest from "../components/Rest";
 // icons
 import { BsCloudSlashFill, BsCloudSunFill } from "react-icons/bs";
-// cities
-import cities from "../utils/cities.json";
+// location
+import useLocation from "../utils/useLocation";
 
 const Home = () => {
   // loading flag
@@ -13,8 +13,7 @@ const Home = () => {
   const [error, setError] = useState(false);
   // variables
   const [advice, setAdvice] = useState("Fuck");
-  const [lat, setLat] = useState(-1.2921);
-  const [lon, setLon] = useState(36.8219);
+  const location = useLocation();
   const [showCities, setShowCities] = useState(false);
   const [fullScreenMode, setFullScreenMode] = useState(false);
 
@@ -28,7 +27,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    // Fetch Data
+    // Fetch Data and Assign Location
     const fetchData = async (lat, lon) => {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1220d3bd956050720587fe7607594091&units=metric`
@@ -44,7 +43,7 @@ const Home = () => {
     };
 
     // Function calls
-    fetchData(lat, lon);
+    fetchData(location.lat, location.lon);
   }, []);
 
   return (
@@ -80,17 +79,6 @@ const Home = () => {
         <>
           <div className="flex flex-col h-full">
             <div className="flex flex-col py-0">
-              <div className="relative flex flex-col w-full p-2 text-xl">
-                <div className="flex">
-                  <span className="text-xl">Current City:</span>
-                  <span
-                    className="ml-1 underline"
-                    onClick={() => setShowCities(true)}
-                  >
-                    {city.name}
-                  </span>
-                </div>
-              </div>
               <div className="w-full py-3 text-4xl">
                 <span className="font-pacifico font-extralight">{advice}</span>
               </div>
