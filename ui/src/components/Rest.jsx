@@ -18,7 +18,7 @@ const Rest = (props) => {
 
   return (
     <div
-      className={`absolute flex flex-col top-0 h-screen w-full overflow-hidden bg-white !bg-cover !bg-no-repeat ${
+      className={`absolute flex flex-col top-0 h-screen w-full overflow-hidden !bg-white !bg-cover !bg-no-repeat ${
         fullScreenMode
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none delay-75"
