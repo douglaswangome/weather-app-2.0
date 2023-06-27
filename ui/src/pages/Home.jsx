@@ -36,6 +36,7 @@ const Home = () => {
         weather_main.toLowerCase() === "drizzle"
       ) {
         setBgImage("url('/images/rainy.jpg')");
+        setTextColor("white");
         if (weather_desc.split(" ")[0] === "light") {
           setAdvice("Carry an umbrella");
         } else {
@@ -52,6 +53,7 @@ const Home = () => {
           setAdvice("Just a normal day");
         }
       } else if (weather_main.toLowerCase() === "snow") {
+        setTextColor("white");
         setAdvice("Just stay indoors and enjoy your favorite movie");
         setBgImage("url('/images/snow.jpg')");
       } else if (weather_main.toLowerCase() === "atmosphere") {
