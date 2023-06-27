@@ -18,14 +18,14 @@ const Rest = (props) => {
 
   return (
     <div
-      className={`absolute flex flex-col top-0 h-screen w-full overflow-y-hidden !bg-cover !bg-no-repeat ${
+      className={`absolute flex flex-col top-0 h-screen w-full overflow-hidden !bg-cover !bg-no-repeat ${
         fullScreenMode
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none delay-500"
       } transition-all duration-500 text-xl`}
       style={{ background: bgImage }}
     >
-      <div className="absolute top-[1%] left-[50%] rounded-t-2xl translate-x-[-50%] w-full max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[98%] bg-transparent z-[11]">
+      <div className="absolute top-[1%] left-[50%] rounded-t-2xl translate-x-[-50%] w-full max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[94%] bg-transparent z-[11]">
         <button
           className="fixed top-[1%] right-1 z-30 bg-transparent  text-white p-1 text-4xl rounded-full"
           onClick={onclick}
@@ -56,7 +56,7 @@ const Rest = (props) => {
               showSunset
                 ? "rotate-[-12deg] opacity-40 z-0"
                 : "rotate-0 opacity-100 z-10"
-            } max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[98%]`}
+            } max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[94%]`}
             style={{ background: "url('/images/sunrise.jpg')" }}
           >
             <div className="mx-auto my-1 text-xl w-fit">
@@ -135,7 +135,7 @@ const Rest = (props) => {
               showSunset
                 ? "z-10 rotate-0 opacity-100"
                 : "z-0 rotate-12 opacity-40"
-            } max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[98%]`}
+            } max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[94%]`}
             style={{ background: "url('/images/sunset.jpg')" }}
           >
             <div className="flex flex-col mx-auto my-2 w-fit">
