@@ -56,7 +56,7 @@ const Rest = (props) => {
               showSunset
                 ? "rotate-[-12deg] opacity-40 z-0"
                 : "rotate-0 opacity-100 z-10"
-            } max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[94%]`}
+            } !bg-cover max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[94%]`}
             style={{ background: "url('/images/sunrise.jpg')" }}
           >
             <div className="mx-auto my-1 text-xl w-fit">
@@ -135,7 +135,7 @@ const Rest = (props) => {
               showSunset
                 ? "z-10 rotate-0 opacity-100"
                 : "z-0 rotate-12 opacity-40"
-            } max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[94%]`}
+            } !bg-cover max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[94%]`}
             style={{ background: "url('/images/sunset.jpg')" }}
           >
             <div className="flex flex-col mx-auto my-2 w-fit">
