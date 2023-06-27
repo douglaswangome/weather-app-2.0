@@ -9,7 +9,7 @@ const Card = (props) => {
   const { single, city, onclick } = props;
 
   return (
-    <div className="flex flex-col bg-gradient-to-br to-sky-400 from-sky-500 w-60 min-w-60 m-1 p-1 rounded-xl flex-shrink-0 text-white">
+    <div className="flex flex-col flex-shrink-0 p-1 m-1 text-white transition-opacity duration-300 bg-gradient-to-br to-sky-400 from-sky-500 w-60 min-w-60 rounded-xl">
       <div className="flex flex-col items-center text-5xl font-semibold">
         <div className="flex items-center text-xl cursor-pointer">
           <MdOutlineLocationOn />
@@ -21,10 +21,10 @@ const Card = (props) => {
             src={`http://openweathermap.org/img/w/${single.weather[0].icon}.png`}
           />
         </div>
-        <span className="text-xl w-fit mx-auto">
+        <span className="mx-auto text-xl w-fit">
           {new Date(single.dt * 1000).toLocaleTimeString()}
         </span>
-        <span className="text-xl w-fit mx-auto">
+        <span className="mx-auto text-xl w-fit">
           {new Date(single.dt * 1000).toDateString()}
         </span>
       </div>
@@ -54,7 +54,7 @@ const Card = (props) => {
           </div>
         </div>
         <button
-          className="flex items-center justify-center my-2 p-1 bg-transparent border border-white group"
+          className="flex items-center justify-center p-1 my-2 bg-transparent border border-white group"
           onClick={onclick}
         >
           <MdOutlineKeyboardDoubleArrowDown className="group-hover:animate-bounce" />

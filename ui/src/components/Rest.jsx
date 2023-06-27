@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { BsX, BsSunriseFill, BsSunsetFill } from "react-icons/bs";
 
 const Rest = (props) => {
-  const { advice, data, city, onclick, fullScreenMode } = props;
+  const { advice, data, city, bgImage, onclick, fullScreenMode } = props;
   const [showSunset, setShowSunset] = useState(false);
 
   const toggleSunset = () => {
@@ -18,11 +18,12 @@ const Rest = (props) => {
 
   return (
     <div
-      className={`absolute flex flex-col top-0 h-screen w-full overflow-y-hidden bg-gray-100 ${
+      className={`absolute flex flex-col top-0 h-screen w-full overflow-y-hidden !bg-cover !bg-no-repeat ${
         fullScreenMode
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none delay-500"
       } transition-all duration-500 text-xl`}
+      style={{ background: bgImage }}
     >
       <div className="absolute top-[1%] left-[50%] rounded-t-2xl translate-x-[-50%] w-full max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[98%] bg-transparent z-[11]">
         <button
@@ -53,7 +54,7 @@ const Rest = (props) => {
           <div
             className={`absolute top-[50%] right-[50%] translate-x-[50%] translate-y-[-50%] flex flex-col h-[98%] my-auto text-white w-[38%] p-2 rounded-2xl transition-all duration-500 ${
               showSunset
-                ? "rotate-[-12deg] opacity-20 z-0"
+                ? "rotate-[-12deg] opacity-40 z-0"
                 : "rotate-0 opacity-100 z-10"
             } max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[98%]`}
             style={{ background: "url('/images/sunrise.jpg')" }}
@@ -133,7 +134,7 @@ const Rest = (props) => {
             className={`absolute top-[50%] right-[50%] translate-x-[50%] translate-y-[-50%] flex flex-col h-[98%] my-auto text-white w-[38%] p-2 rounded-2xl transition-all duration-500 ${
               showSunset
                 ? "z-10 rotate-0 opacity-100"
-                : "z-0 rotate-12 opacity-20"
+                : "z-0 rotate-12 opacity-40"
             } max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[98%]`}
             style={{ background: "url('/images/sunset.jpg')" }}
           >
