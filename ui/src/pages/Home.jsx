@@ -25,6 +25,11 @@ const Home = () => {
 
   const toggleFullScreen = () => {
     setFullScreenMode((prevFullScreenMode) => !prevFullScreenMode);
+    if (fullScreenMode) {
+      setTimeout(() => {
+        setIndex(0);
+      }, 600);
+    }
   };
 
   useEffect(() => {
@@ -85,7 +90,7 @@ const Home = () => {
 
     // Function calls
     fetchData(location.lat, location.lon);
-  }, []);
+  }, [index]);
 
   return (
     <div

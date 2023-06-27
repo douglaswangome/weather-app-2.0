@@ -21,7 +21,7 @@ const Rest = (props) => {
       className={`absolute flex flex-col top-0 h-screen w-full overflow-hidden !bg-cover !bg-no-repeat ${
         fullScreenMode
           ? "opacity-100 pointer-events-auto"
-          : "opacity-0 pointer-events-none delay-500"
+          : "opacity-0 pointer-events-none delay-75"
       } transition-all duration-500 text-xl`}
       style={{ background: bgImage }}
     >
