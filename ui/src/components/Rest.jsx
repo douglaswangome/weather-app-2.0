@@ -18,14 +18,14 @@ const Rest = (props) => {
 
   return (
     <div
-      className={`absolute flex flex-col top-0 h-screen w-full overflow-hidden !bg-cover !bg-no-repeat ${
+      className={`absolute flex flex-col top-0 h-screen w-full overflow-hidden bg-white !bg-cover !bg-no-repeat ${
         fullScreenMode
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none delay-75"
       } transition-all duration-500 text-xl`}
       style={{ background: bgImage }}
     >
-      <div className="absolute top-[1%] left-[50%] rounded-t-2xl translate-x-[-50%] w-full max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[94%] bg-transparent z-[11]">
+      <div className="absolute top-[1%] left-[50%] rounded-t-2xl translate-x-[-50%] w-[38%] max-[1024px]:w-[48%] max-[810px]:w-[60%] max-[640px]:w-[80%] max-[480px]:w-[94%] bg-transparent z-[11]">
         <button
           className="fixed top-[1%] right-1 z-30 bg-transparent  text-white p-1 text-4xl rounded-full"
           onClick={onclick}
