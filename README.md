@@ -2,6 +2,7 @@
 <ul>
 <li>This is an application that shows weather conditions for one's current location for upto 6 days.</li>
 <li>It is responsive which means it can be used on any device.</li>
+<li>The default location is Nairobi</li>
 </ul>
 
 ### Frameworks used:
