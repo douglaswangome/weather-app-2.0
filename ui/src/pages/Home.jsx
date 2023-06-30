@@ -212,7 +212,7 @@ const Home = () => {
 
     // Function calls
     fetchData(location.lat, location.lon);
-  }, [index, location]);
+  }, [index]);
 
   return (
     <div
