@@ -9,6 +9,7 @@ import useLocation from "../utils/useLocation";
 
 const Home = () => {
   // loading flag
+  const [reload, setReload] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   // variables
@@ -210,9 +211,19 @@ const Home = () => {
       }
     };
 
+    const updateLocation = (lat, lon) => {
+      if (lat === -1.2921 && lon === 36.8219) {
+        setTimeout(() => {
+          setReload(true);
+        }, 2000);
+      } else {
+        fetchData(location.lat, location.lon);
+      }
+    };
+
     // Function calls
-    fetchData(location.lat, location.lon);
-  }, [index]);
+    updateLocation(location.lat, location.lon);
+  }, [index, reload]);
 
   return (
     <div
@@ -223,14 +234,11 @@ const Home = () => {
         <span className="text-sky-500">Weather App</span>
       </div>
       {loading ? (
-        <div className="relative flex items-center justify-center w-full h-full text-sky-500">
+        <div className="relative flex items-center justify-center w-full h-full text-sky-500 animate-pulse">
           <div className="flex flex-col text-6xl">
             <BsCloudSunFill className="mx-auto" />
             <div className="flex text-xl font-pacifico">
-              <span>Loading</span>
-              <span className="animate-pulse">.</span>
-              <span className="delay-300 animate-pulse">.</span>
-              <span className="delay-500 animate-pulse">.</span>
+              <span>Loading ...</span>
             </div>
           </div>
         </div>
@@ -239,10 +247,7 @@ const Home = () => {
           <div className="flex flex-col text-6xl">
             <BsCloudSlashFill className="mx-auto" />
             <div className="flex text-xl font-pacifico">
-              <span>Check your internet connection and try again</span>
-              <span className="animate-pulse">.</span>
-              <span className="animate-pulse">.</span>
-              <span className="animate-pulse">.</span>
+              <span>Check your internet connection and try again ...</span>
             </div>
           </div>
         </div>
